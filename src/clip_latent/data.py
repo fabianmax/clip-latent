@@ -13,10 +13,6 @@ USER_AGENT = get_datasets_user_agent()
 def fetch_single_image(image_url, timeout=None, retries=0):
     """
     Fetch an image from a URL.
-    :param image_url:
-    :param timeout:
-    :param retries:
-    :return:
     """
     for _ in range(retries + 1):
         try:
@@ -36,11 +32,6 @@ def fetch_single_image(image_url, timeout=None, retries=0):
 def fetch_images(batch, num_threads, timeout=None, retries=0):
     """
     Fetch a batch of images from URLs.
-    :param batch:
-    :param num_threads:
-    :param timeout:
-    :param retries:
-    :return:
     """
     fetch_single_image_with_args = partial(fetch_single_image, timeout=timeout, retries=retries)
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
