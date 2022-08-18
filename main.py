@@ -17,7 +17,7 @@ if __name__ == '__main__':
     if os.path.exists(f'{DATA_DIR}/conceptual_captions'):
         ds = load_from_disk(f'{DATA_DIR}/conceptual_captions')
     else:
-        ds = load_dataset("conceptual_captions", split="train[0:100]")
+        ds = load_dataset("conceptual_captions", split="train[0:10]")
         ds = ds.map(fetch_images, batched=True, batch_size=100, fn_kwargs={"num_threads": NUM_THREADS})
         ds.save_to_disk(f"{DATA_DIR}/conceptual_captions")
 
