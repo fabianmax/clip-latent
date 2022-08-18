@@ -1,1 +1,1 @@
-# clip-latent
+# CLIP Latent Exploration
